@@ -1,3 +1,6 @@
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme
+
+title: Data Science Portfolio by Hypatia Hou
+description: A showcase of my lifescience analytics or AI/ML projects.
