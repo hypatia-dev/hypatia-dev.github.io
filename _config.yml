@@ -1,0 +1,133 @@
+# _config.yml
+title: Data Science Portfolio by Hypatia Hou
+description: A showcase of my lifescience analytics or AI/ML projects.
+author: Your Name
+url: "https://hypatia-dev.github.io"
+github_username: hypatia-dev
+markdown: kramdown
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme
+
+# Create index.md in root directory
+---
+layout: home
+title: Welcome
+---
+
+# Welcome to My Site
+A showcase of my lifescience analytics or AI/ML projects.
+
+# Create _layouts/default.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% seo %}
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/projects">Projects</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}. Built with Jekyll.</p>
+    </footer>
+</body>
+</html>
+
+# Create _layouts/post.html
+---
+layout: default
+---
+<article class="post">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date | date: "%B %d, %Y" }}</p>
+    {{ content }}
+</article>
+
+# Create assets/css/style.scss
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Custom styles */
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0366d6;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: #666;
+}
+
+# Create _posts/2024-01-01-hello-world.md
+---
+layout: post
+title: "Hello World"
+date: 2024-01-01
+categories: general
+---
+
+This is my first blog post using Jekyll and GitHub Pages. 
+More content coming soon!
+
+# Create projects.md
+---
+layout: page
+title: Projects
+---
+
+## My Projects
+
+### Project 1
+Description of your first project.
+
+### Project 2
+Description of your second project.
+
+# Create about.md
+---
+layout: page
+title: About
+---
+
+## About Me
+
+Write a brief introduction about yourself, your skills, and your interests.
